@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\AuthorController;
 use App\Http\Controllers\Api\CategoryController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -16,8 +17,15 @@ Route::get('test/{x}' , function($x1){
     return "I am for test only: $x1";
 });
 
+// Category Routes
 // Route::get('categories' , ['App\Http\Controllers\Api\CategoryController' , 'index']);
 Route::get('categories' , [CategoryController::class,  'index']);
 Route::post('categories' , [CategoryController::class,  'store']);
 Route::put('categories/{identifier}' , [CategoryController::class,  'update']);
 Route::delete('categories/{id}' , [CategoryController::class,  'destroy']);
+
+// Author Routes
+Route::get('authors', [AuthorController::class, 'index']);
+Route::post('authors', [AuthorController::class, 'store']);
+Route::put('authors/{id}', [AuthorController::class, 'update']);
+Route::delete('authors/{id}', [AuthorController::class, 'destroy']);
