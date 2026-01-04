@@ -15,7 +15,7 @@ class CategoryController extends Controller
     public function index()
     {
         $categories =  Category::all();
-        return $categories;
+       return ResponseHelper::success(' جميع الأصناف',$categories);
     }
 
     /**
@@ -32,7 +32,7 @@ class CategoryController extends Controller
         return ResponseHelper::success("تمت إضافة الصنف" , $category);
     }
 
-    
+
 
     /**
      * Update the specified resource in storage.
