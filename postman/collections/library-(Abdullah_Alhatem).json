@@ -1,0 +1,269 @@
+{
+    "info": {
+        "_postman_id": "d16e8f6c-a03e-4c86-a702-fc8f4f64a427",
+        "name": "library-(Abdullah_Alhatem)",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "categories",
+            "item": [
+                {
+                    "name": "all",
+                    "id": "916da73b-de8d-4226-9c62-998d6d687c41",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json",
+                                "type": "text"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{url}}/api/categories",
+                            "host": ["{{url}}"],
+                            "path": ["api", "categories"]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "add",
+                    "id": "51c992a4-6a25-4be5-99c8-96ee73c7e51c",
+                    "protocolProfileBehavior": {
+                        "disabledSystemHeaders": {
+                            "accept": true
+                        },
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json",
+                                "type": "text"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\r\n \"name\" : \"foodx\"\r\n}\r\n",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "{{url}}/api/categories",
+                            "host": ["{{url}}"],
+                            "path": ["api", "categories"]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "update",
+                    "id": "94e9b6cb-41f2-45d1-95e9-a91b73425dbf",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json",
+                                "type": "text"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\r\n \"name\" : \"web design-new\"\r\n}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "{{url}}/api/categories/5",
+                            "host": ["{{url}}"],
+                            "path": ["api", "categories", "5"]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "delete",
+                    "id": "57c0ce6c-0c00-405b-930d-42b83ac45f86",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json",
+                                "type": "text"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{url}}/api/categories/5",
+                            "host": ["{{url}}"],
+                            "path": ["api", "categories", "5"]
+                        }
+                    },
+                    "response": []
+                }
+            ],
+            "id": "ef39ac6d-7cf1-4671-b918-6ea58a281191"
+        },
+        {
+            "name": "Authors",
+            "item": [
+                {
+                    "name": "all",
+                    "id": "c01687bb-75c7-44c4-b4ff-b6276c3247eb",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json",
+                                "type": "text"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{url}}/api/categories",
+                            "host": ["{{url}}"],
+                            "path": ["api", "categories"]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "add",
+                    "id": "96ad01c7-92de-4686-87c6-7e062b9e28c4",
+                    "protocolProfileBehavior": {
+                        "disabledSystemHeaders": {
+                            "accept": true
+                        },
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json",
+                                "type": "text"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\r\n \"name\" : \"مصطفى محمود\"\r\n}\r\n",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "{{url}}/api/categories",
+                            "host": ["{{url}}"],
+                            "path": ["api", "categories"]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "update",
+                    "id": "18b96d8c-5954-4e09-a8fb-e4d5da5f0bc0",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json",
+                                "type": "text"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\r\n \"name\" : \"طه عبدالرحمن\"\r\n}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "{{url}}/api/categories/5",
+                            "host": ["{{url}}"],
+                            "path": ["api", "categories", "5"]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "delete",
+                    "event": [
+                        {
+                            "listen": "prerequest",
+                            "script": {
+                                "id": "d6d9af2a-c7dc-4804-9339-69f2eca13784",
+                                "exec": [""],
+                                "type": "text/javascript",
+                                "packages": {},
+                                "requests": {}
+                            }
+                        },
+                        {
+                            "listen": "test",
+                            "script": {
+                                "id": "8671ba58-1be0-4237-be29-5cc30bedc990",
+                                "exec": [""],
+                                "type": "text/javascript",
+                                "packages": {},
+                                "requests": {}
+                            }
+                        }
+                    ],
+                    "id": "af16ab31-28ad-43fb-8dbc-8f76a6811323",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json",
+                                "type": "text"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{url}}/api/authors/5",
+                            "host": ["{{url}}"],
+                            "path": ["api", "authors", "5"]
+                        }
+                    },
+                    "response": []
+                }
+            ],
+            "id": "590743bc-45a2-4e95-98c4-94ca36172286"
+        }
+    ]
+}
