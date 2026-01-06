@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\ResponseHelper;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class CategoryController extends Controller
 {
@@ -24,10 +25,21 @@ class CategoryController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name' => 'required|max:50|unique:categories'
+            'name' => 'required|max:50|unique:categories',
+            'image' => 'nullable|image|mimes:jpeg,jpg,png,gif,webp|max:2048'
         ]);
+
         $category = new Category();
         $category->name = $request->name;
+
+        if ($request->hasFile('image')) {
+            $file = $request->file('image');
+            $filename = time() . '_' . $file->getClientOriginalName();
+            Storage::putFileAs('category-images', $file, $filename);
+            // حفظ اسم الملف في قاعدة البيانات
+            $category->image = $filename;
+        }
+
         $category->save();
         return ResponseHelper::success("تمت إضافة الصنف" , $category);
     }

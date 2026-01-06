@@ -1,246 +1,504 @@
 {
-    "info": {
-        "_postman_id": "d16e8f6c-a03e-4c86-a702-fc8f4f64a427",
-        "name": "library-(Abdullah_Alhatem)",
-        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
-    },
-    "item": [
+  "info": {
+    "_postman_id": "d16e8f6c-a03e-4c86-a702-fc8f4f64a427",
+    "name": "library-(Abdullah_Alhatem)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "categories",
+      "item": [
         {
-            "name": "categories",
-            "item": [
-                {
-                    "name": "all",
-                    "id": "916da73b-de8d-4226-9c62-998d6d687c41",
-                    "protocolProfileBehavior": {
-                        "disableBodyPruning": true
-                    },
-                    "request": {
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Accept",
-                                "value": "application/json",
-                                "type": "text"
-                            }
-                        ],
-                        "url": {
-                            "raw": "{{url}}/api/categories",
-                            "host": ["{{url}}"],
-                            "path": ["api", "categories"]
-                        }
-                    },
-                    "response": []
-                },
-                {
-                    "name": "add",
-                    "id": "51c992a4-6a25-4be5-99c8-96ee73c7e51c",
-                    "protocolProfileBehavior": {
-                        "disabledSystemHeaders": {
-                            "accept": true
-                        },
-                        "disableBodyPruning": true
-                    },
-                    "request": {
-                        "method": "POST",
-                        "header": [
-                            {
-                                "key": "Accept",
-                                "value": "application/json",
-                                "type": "text"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "{\r\n \"name\" : \"foodx\"\r\n}\r\n",
-                            "options": {
-                                "raw": {
-                                    "language": "json"
-                                }
-                            }
-                        },
-                        "url": {
-                            "raw": "{{url}}/api/categories",
-                            "host": ["{{url}}"],
-                            "path": ["api", "categories"]
-                        }
-                    },
-                    "response": []
-                },
-                {
-                    "name": "update",
-                    "id": "94e9b6cb-41f2-45d1-95e9-a91b73425dbf",
-                    "protocolProfileBehavior": {
-                        "disableBodyPruning": true
-                    },
-                    "request": {
-                        "method": "PUT",
-                        "header": [
-                            {
-                                "key": "Accept",
-                                "value": "application/json",
-                                "type": "text"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "{\r\n \"name\" : \"web design-new\"\r\n}",
-                            "options": {
-                                "raw": {
-                                    "language": "json"
-                                }
-                            }
-                        },
-                        "url": {
-                            "raw": "{{url}}/api/categories/5",
-                            "host": ["{{url}}"],
-                            "path": ["api", "categories", "5"]
-                        }
-                    },
-                    "response": []
-                },
-                {
-                    "name": "delete",
-                    "id": "57c0ce6c-0c00-405b-930d-42b83ac45f86",
-                    "protocolProfileBehavior": {
-                        "disableBodyPruning": true
-                    },
-                    "request": {
-                        "method": "DELETE",
-                        "header": [
-                            {
-                                "key": "Accept",
-                                "value": "application/json",
-                                "type": "text"
-                            }
-                        ],
-                        "url": {
-                            "raw": "{{url}}/api/categories/5",
-                            "host": ["{{url}}"],
-                            "path": ["api", "categories", "5"]
-                        }
-                    },
-                    "response": []
-                }
+          "name": "all",
+          "id": "916da73b-de8d-4226-9c62-998d6d687c41",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
             ],
-            "id": "ef39ac6d-7cf1-4671-b918-6ea58a281191"
+            "url": {
+              "raw": "{{url}}/api/categories",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "api",
+                "categories"
+              ]
+            }
+          },
+          "response": []
         },
         {
-            "name": "Authors",
-            "item": [
-                {
-                    "name": "all",
-                    "id": "c01687bb-75c7-44c4-b4ff-b6276c3247eb",
-                    "protocolProfileBehavior": {
-                        "disableBodyPruning": true
-                    },
-                    "request": {
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Accept",
-                                "value": "application/json",
-                                "type": "text"
-                            }
-                        ],
-                        "url": {
-                            "raw": "{{url}}/api/authors",
-                            "host": ["{{url}}"],
-                            "path": ["api", "authors"]
-                        }
-                    },
-                    "response": []
-                },
-                {
-                    "name": "add",
-                    "id": "96ad01c7-92de-4686-87c6-7e062b9e28c4",
-                    "protocolProfileBehavior": {
-                        "disabledSystemHeaders": {
-                            "accept": true
-                        }
-                    },
-                    "request": {
-                        "method": "POST",
-                        "header": [
-                            {
-                                "key": "Accept",
-                                "value": "application/json",
-                                "type": "text"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "{\r\n \"name\" : \"مصطفى محمود\"\r\n}\r\n",
-                            "options": {
-                                "raw": {
-                                    "language": "json"
-                                }
-                            }
-                        },
-                        "url": {
-                            "raw": "{{url}}/api/authors",
-                            "host": ["{{url}}"],
-                            "path": ["api", "authors"]
-                        }
-                    },
-                    "response": []
-                },
-                {
-                    "name": "update",
-                    "id": "18b96d8c-5954-4e09-a8fb-e4d5da5f0bc0",
-                    "protocolProfileBehavior": {
-                        "disableBodyPruning": true
-                    },
-                    "request": {
-                        "method": "PUT",
-                        "header": [
-                            {
-                                "key": "Accept",
-                                "value": "application/json",
-                                "type": "text"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "{\r\n \"name\" : \"طه عبد الرحمن\"\r\n}",
-                            "options": {
-                                "raw": {
-                                    "language": "json"
-                                }
-                            }
-                        },
-                        "url": {
-                            "raw": "{{url}}/api/authors/3",
-                            "host": ["{{url}}"],
-                            "path": ["api", "authors", "3"]
-                        }
-                    },
-                    "response": []
-                },
-                {
-                    "name": "delete",
-                    "id": "af16ab31-28ad-43fb-8dbc-8f76a6811323",
-                    "protocolProfileBehavior": {
-                        "disableBodyPruning": true
-                    },
-                    "request": {
-                        "method": "DELETE",
-                        "header": [
-                            {
-                                "key": "Accept",
-                                "value": "application/json",
-                                "type": "text"
-                            }
-                        ],
-                        "url": {
-                            "raw": "{{url}}/api/authors/5",
-                            "host": ["{{url}}"],
-                            "path": ["api", "authors", "5"]
-                        }
-                    },
-                    "response": []
-                }
+          "name": "add",
+          "id": "51c992a4-6a25-4be5-99c8-96ee73c7e51c",
+          "protocolProfileBehavior": {
+            "disabledSystemHeaders": {
+              "accept": true
+            },
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "multipart/form-data",
+                "type": "text",
+                "uuid": "6ae27d8c-8ee7-4d31-91ff-7e39dd1b6231"
+              }
             ],
-            "id": "590743bc-45a2-4e95-98c4-94ca36172286"
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "name",
+                  "value": "علم النفس",
+                  "type": "text",
+                  "uuid": "0d3266bd-14e5-4262-8a94-ae56185b32c7"
+                },
+                {
+                  "key": "image",
+                  "type": "file",
+                  "uuid": "e407b337-f1a9-4f2d-833c-924796f82429",
+                  "src": [
+                    "postman-cloud:///1f0eb1ec-27e0-43b0-a4c6-0f623ed6adc4"
+                  ]
+                }
+              ],
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/api/categories",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "api",
+                "categories"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "update",
+          "id": "94e9b6cb-41f2-45d1-95e9-a91b73425dbf",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n \"name\" : \"web design-new\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/api/categories/5",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "api",
+                "categories",
+                "5"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "delete",
+          "id": "57c0ce6c-0c00-405b-930d-42b83ac45f86",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{url}}/api/categories/5",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "api",
+                "categories",
+                "5"
+              ]
+            }
+          },
+          "response": []
         }
-    ]
+      ],
+      "id": "ef39ac6d-7cf1-4671-b918-6ea58a281191"
+    },
+    {
+      "name": "Authors",
+      "item": [
+        {
+          "name": "all",
+          "id": "c01687bb-75c7-44c4-b4ff-b6276c3247eb",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{url}}/api/authors",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "api",
+                "authors"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "add",
+          "id": "96ad01c7-92de-4686-87c6-7e062b9e28c4",
+          "protocolProfileBehavior": {
+            "disabledSystemHeaders": {
+              "accept": true
+            }
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n \"name\" : \"مصطفى محمود\"\r\n}\r\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/api/authors",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "api",
+                "authors"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "update",
+          "id": "18b96d8c-5954-4e09-a8fb-e4d5da5f0bc0",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n \"name\" : \"طه عبد الرحمن\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/api/authors/3",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "api",
+                "authors",
+                "3"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "delete",
+          "id": "af16ab31-28ad-43fb-8dbc-8f76a6811323",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{url}}/api/authors/5",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "api",
+                "authors",
+                "5"
+              ]
+            }
+          },
+          "response": []
+        }
+      ],
+      "id": "590743bc-45a2-4e95-98c4-94ca36172286"
+    },
+    {
+      "name": "Books",
+      "item": [
+        {
+          "name": "all",
+          "id": "806a1213-6eac-4cc1-b6d3-69b8be61d8d3",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{url}}/api/books",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "api",
+                "books"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "add",
+          "id": "4be44b3a-dca0-4e71-8021-e97c8bd783ff",
+          "protocolProfileBehavior": {
+            "disabledSystemHeaders": {
+              "accept": true
+            },
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "warning": "This is a duplicate header and will be overridden by the Content-Type header generated by Postman.",
+                "key": "Content-Type",
+                "value": "multipart/form-data",
+                "type": "text",
+                "uuid": "2f57f74c-2271-45ef-9ece-cbd6805ec7a0"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "ISBN",
+                  "value": "1234567890123",
+                  "type": "text",
+                  "uuid": "dbc0197d-d51c-4118-8420-542741739712"
+                },
+                {
+                  "key": "title",
+                  "value": "كتاب تجريبي",
+                  "type": "text",
+                  "uuid": "7e826e2f-2a70-4bc5-b6db-d2b864599732"
+                },
+                {
+                  "key": "price",
+                  "value": "50.00",
+                  "type": "text",
+                  "uuid": "5ead56e3-45f8-44a7-8ba5-0bcdeb7a11f8"
+                },
+                {
+                  "key": "mortgage",
+                  "value": "100.00",
+                  "type": "text",
+                  "uuid": "9c504d62-93aa-4bb4-8ed6-063ac106ce3a"
+                },
+                {
+                  "key": "category_id",
+                  "value": "1",
+                  "type": "text",
+                  "uuid": "f6c7775b-b7a0-4dd0-ac7b-98b48912b17c"
+                },
+                {
+                  "key": "cover",
+                  "type": "file",
+                  "uuid": "79e0db4d-0d13-43bc-9edc-9243ee785b96",
+                  "src": [
+                    "/C:/Users/Abdullah/OneDrive/الصور/aa.jpg"
+                  ]
+                }
+              ],
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/api/books",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "api",
+                "books"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "update",
+          "id": "e7312ee4-97fa-49ea-8746-137bb6f5a5c6",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "multipart/form-data",
+                "type": "text",
+                "uuid": "aa1354a3-225c-499c-aae8-e1430aee2f32"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n \"name\" : \"new book\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/api/books/1",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "api",
+                "books",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "delete",
+          "id": "c1d2de51-6115-4443-b1ba-705b21bd28a0",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{url}}/api/books/1",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "api",
+                "books",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        }
+      ],
+      "id": "7f7aa41e-e34e-48c4-a14d-3926fde45d28"
+    }
+  ]
 }
