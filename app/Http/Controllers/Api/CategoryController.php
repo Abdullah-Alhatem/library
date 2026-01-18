@@ -15,10 +15,8 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        // $categories =  Category::all();
-        // $categories =  Category::withAvg('books' , 'price')->get();
-        $categories =  Category::withCount('books')->get();
-       return ResponseHelper::success(' جميع الأصناف',$categories);
+        $categories = Category::withCount('books')->get();
+        return ResponseHelper::success('جميع الأصناف', $categories);
     }
 
     /**
@@ -38,15 +36,12 @@ class CategoryController extends Controller
             $file = $request->file('image');
             $filename = time() . '_' . $file->getClientOriginalName();
             Storage::putFileAs('category-images', $file, $filename);
-            // حفظ اسم الملف في قاعدة البيانات
             $category->image = $filename;
         }
 
         $category->save();
-        return ResponseHelper::success("تمت إضافة الصنف" , $category);
+        return ResponseHelper::success("تمت إضافة الصنف", $category);
     }
-
-
 
     /**
      * Update the specified resource in storage.
@@ -54,14 +49,33 @@ class CategoryController extends Controller
     public function update(Request $request, string $id)
     {
         $request->validate([
-            'name' => "required|max:50|unique:categories,name,$id"
+            'name' => "required|max:50|unique:categories,name,$id",
+            'image' => 'nullable|image|mimes:jpeg,jpg,png,gif,webp|max:2048'
         ]);
 
         $category = Category::find($id);
-        $category->name = $request->name;
-        $category->save();
-        return ResponseHelper::success("تم تعديل الصنف" , $category);
 
+        if (!$category) {
+            return ResponseHelper::failed("الصنف غير موجود");
+        }
+
+        $category->name = $request->name;
+
+        // رفع الصورة الجديدة إن وجدت
+        if ($request->hasFile('image')) {
+            // حذف الصورة القديمة إن وجدت
+            if ($category->image) {
+                Storage::delete('category-images/' . $category->image);
+            }
+
+            $file = $request->file('image');
+            $filename = time() . '_' . $file->getClientOriginalName();
+            Storage::putFileAs('category-images', $file, $filename);
+            $category->image = $filename;
+        }
+
+        $category->save();
+        return ResponseHelper::success("تم تعديل الصنف", $category);
     }
 
     /**
@@ -70,7 +84,24 @@ class CategoryController extends Controller
     public function destroy(string $id)
     {
         $category = Category::find($id);
+
+        if (!$category) {
+            return ResponseHelper::failed("الصنف غير موجود");
+        }
+
+        // التحقق من وجود كتب مرتبطة بالصنف
+        $booksCount = $category->books()->count();
+
+        if ($booksCount > 0) {
+            return ResponseHelper::failed("لا يمكن حذف الصنف لوجود $booksCount كتاب مرتبط به");
+        }
+
+        // حذف الصورة إن وجدت
+        if ($category->image) {
+            Storage::delete('category-images/' . $category->image);
+        }
+
         $category->delete();
-        return ResponseHelper::success("تم حذف الصنف" , $category);
+        return ResponseHelper::success("تم حذف الصنف", $category);
     }
 }

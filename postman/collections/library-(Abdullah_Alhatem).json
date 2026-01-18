@@ -403,6 +403,30 @@
                   "src": [
                     "/C:/Users/Abdullah/OneDrive/الصور/aa.jpg"
                   ]
+                },
+                {
+                  "key": "authorship_date",
+                  "value": "2024-01-01",
+                  "type": "text",
+                  "uuid": "bb35fcc2-f7ac-4757-895e-79b240d1626b"
+                },
+                {
+                  "key": "authors[0]",
+                  "value": "1",
+                  "type": "text",
+                  "uuid": "a0c96374-8d04-4738-ac9c-98480545cd34"
+                },
+                {
+                  "key": "authors[1]",
+                  "value": "3",
+                  "type": "text",
+                  "uuid": "0b19517b-cefc-4e05-903b-8fbcefbc98e6"
+                },
+                {
+                  "key": "authors[2]",
+                  "value": "5",
+                  "type": "text",
+                  "uuid": "e4b2fdcf-49b4-466b-8980-8d47c40d53d2"
                 }
               ],
               "options": {
@@ -431,7 +455,7 @@
             "disableBodyPruning": true
           },
           "request": {
-            "method": "PUT",
+            "method": "POST",
             "header": [
               {
                 "key": "Accept",
@@ -446,8 +470,57 @@
               }
             ],
             "body": {
-              "mode": "raw",
-              "raw": "{\r\n \"name\" : \"new book\"\r\n}",
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "_method",
+                  "value": "PUT",
+                  "type": "text",
+                  "uuid": "4797fa94-7edb-4c57-a041-ddb118e19af1"
+                },
+                {
+                  "key": "ISBN",
+                  "value": "1234567890126",
+                  "type": "text",
+                  "uuid": "c2f3d6d5-ed39-4f98-bdcd-e04265d522ee"
+                },
+                {
+                  "key": "title",
+                  "value": "كتاب معدل",
+                  "type": "text",
+                  "uuid": "8ccfb285-25b6-4717-9cc9-30a61539136e"
+                },
+                {
+                  "key": "price",
+                  "value": "55.00",
+                  "type": "text",
+                  "uuid": "603d28e4-895a-475b-a5d9-50261fba50a7"
+                },
+                {
+                  "key": "mortgage",
+                  "value": "110.00",
+                  "type": "text",
+                  "uuid": "3f202489-ffc7-4d9c-816f-f53b981965f0"
+                },
+                {
+                  "key": "category_id",
+                  "value": "1",
+                  "type": "text",
+                  "uuid": "3059d6b8-520d-488d-86b7-8ab490e12118"
+                },
+                {
+                  "key": "authors[0]",
+                  "value": "2",
+                  "type": "text",
+                  "uuid": "7cfb30da-7bcb-4fde-8241-b189e151dbc3"
+                },
+                {
+                  "key": "authors[1]",
+                  "value": "4",
+                  "type": "text",
+                  "uuid": "304d19b7-bb5b-4524-81ce-05a040018594"
+                }
+              ],
               "options": {
                 "raw": {
                   "language": "json"
@@ -492,6 +565,42 @@
                 "api",
                 "books",
                 "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Show one book with its category and authors",
+          "id": "48e3a055-4a1d-4d29-a9d3-534b415919b4",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text",
+                "uuid": "a383e798-ed6f-4d8a-8013-a52d44fb47c3"
+              }
+            ],
+            "url": {
+              "raw": "{{url}}/api/books/1",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "api",
+                "books",
+                "1"
+              ],
+              "query": [
+                {
+                  "key": "",
+                  "value": null,
+                  "type": "text",
+                  "uuid": "77c02859-e30a-49ec-ba18-765200395b61",
+                  "disabled": true
+                }
               ]
             }
           },

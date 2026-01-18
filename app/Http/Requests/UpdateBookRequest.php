@@ -6,19 +6,11 @@ use Illuminate\Foundation\Http\FormRequest;
 
 class UpdateBookRequest extends FormRequest
 {
-    /**
-     * Determine if the user is authorized to make this request.
-     */
     public function authorize(): bool
     {
         return true;
     }
 
-    /**
-     * Get the validation rules that apply to the request.
-     *
-     * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array<mixed>|string>
-     */
     public function rules(): array
     {
         $bookId = $this->book->id;
@@ -31,6 +23,9 @@ class UpdateBookRequest extends FormRequest
             'authorship_date' => 'nullable|date',
             'category_id' => 'required|exists:categories,id',
             'cover' => 'nullable|image|mimes:jpeg,jpg,png,gif,webp|max:2048',
+            // إضافة validation للـ authors
+            'authors' => 'nullable|array',
+            'authors.*' => 'exists:authors,id',
         ];
     }
 
@@ -56,6 +51,8 @@ class UpdateBookRequest extends FormRequest
             'cover.image' => 'الغلاف يجب أن يكون صورة',
             'cover.mimes' => 'الغلاف يجب أن يكون من نوع: jpeg, jpg, png, gif, webp',
             'cover.max' => 'حجم الصورة يجب ألا يتجاوز 2 ميجابايت',
+            'authors.array' => 'المؤلفين يجب أن تكون مصفوفة',
+            'authors.*.exists' => 'أحد المؤلفين المحددين غير موجود',
         ];
     }
 }
