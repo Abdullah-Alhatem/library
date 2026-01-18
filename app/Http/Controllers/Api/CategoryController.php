@@ -15,7 +15,9 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $categories =  Category::all();
+        // $categories =  Category::all();
+        // $categories =  Category::withAvg('books' , 'price')->get();
+        $categories =  Category::withCount('books')->get();
        return ResponseHelper::success(' جميع الأصناف',$categories);
     }
 
